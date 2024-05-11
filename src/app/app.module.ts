@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
@@ -8,7 +9,7 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, CommonModule, AppRoutingModule],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
