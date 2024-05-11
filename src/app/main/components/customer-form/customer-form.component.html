@@ -1,0 +1,144 @@
+<form [formGroup]="newCustomerForm" (ngSubmit)="onSubmit()">
+  <!-- First Row -->
+  <div class="flex flex-col md:flex-row">
+    <mat-form-field class="w-full md:w-1/2 pr-1">
+      <mat-label>Country</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="country"
+        placeholder="El Salvador"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="w-full md:w-1/2 pl-1">
+      <mat-label>ID (DUI)</mat-label>
+      <input
+        type="number"
+        matInput
+        formControlName="id"
+        placeholder="Número de Identificación"
+        [readonly]="existingCustomerId !== null"
+      />
+    </mat-form-field>
+  </div>
+
+  <!-- Second Row -->
+  <div class="flex flex-col md:flex-row">
+    <mat-form-field class="w-full md:w-1/2 pr-1">
+      <mat-label>Nombres</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="firstName"
+        placeholder="Nombres"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="w-full md:w-1/2 pl-1">
+      <mat-label>Apellidos</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="lastName"
+        placeholder="Apellidos"
+      />
+    </mat-form-field>
+  </div>
+
+  <!-- Third Row -->
+  <div class="flex flex-col md:flex-row">
+    <div class="w-full md:w-1/2 pr-1" (click)="picker.open()">
+      <mat-form-field class="w-full">
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [readonly]="true"
+          formControlName="birthDate"
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="w-full md:w-1/2 pr-1">
+      <mat-label>Género</mat-label>
+      <mat-select formControlName="gender">
+        @for (gender of genders; track gender) {
+        <mat-option [value]="gender">{{ gender | titlecase }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <!-- Fourth Row -->
+  <div class="flex flex-col md:flex-row">
+    <mat-form-field class="w-full md:w-1/2 pr-1">
+      <mat-label>Teléfono Móvil</mat-label>
+      <input
+        type="number"
+        matInput
+        formControlName="cellPhone"
+        placeholder="Teléfono Móvil"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="w-full md:w-1/2 pr-1">
+      <mat-label>Teléfono de Casa</mat-label>
+      <input
+        type="number"
+        matInput
+        formControlName="homePhone"
+        placeholder="Teléfono de Casa"
+      />
+    </mat-form-field>
+  </div>
+
+  <!-- Fifth Row -->
+  <div class="flex flex-row">
+    <mat-form-field class="w-full">
+      <mat-label>Dirección de Casa</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="addressHome"
+        placeholder="Dirección de Casa"
+      />
+    </mat-form-field>
+  </div>
+
+  <!-- Sixth Row -->
+  <div class="flex flex-col md:flex-row">
+    <mat-form-field class="w-full md:w-1/2 pr-1">
+      <mat-label>Profesión</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="profession"
+        placeholder="Profesión"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="w-full md:w-1/2 pr-1">
+      <mat-label>Ingresos</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="incomes"
+        placeholder="Ingresos"
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="w-full">
+    <button type="submit" mat-flat-button color="primary" class="w-full">
+      {{
+        existingCustomerId !== null ? "Actualizar Registro" : "Guardar Registro"
+      }}
+    </button>
+  </div>
+</form>
