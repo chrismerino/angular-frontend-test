@@ -21,4 +21,12 @@ describe('CustomerFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have 3 genders', () => {
+    expect(component.genders.length).toBe(3);
+  });
+
+  it('should have property existingCustomerId inialized to null', () => {
+    expect(component.existingCustomerId).toBeFalsy();
+  });
 });

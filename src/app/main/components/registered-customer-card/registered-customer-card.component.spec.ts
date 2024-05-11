@@ -8,10 +8,9 @@ describe('RegisteredCustomerCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RegisteredCustomerCardComponent]
-    })
-    .compileComponents();
-    
+      imports: [RegisteredCustomerCardComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(RegisteredCustomerCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -19,5 +18,9 @@ describe('RegisteredCustomerCardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should have customer initialized null', () => {
+    expect(component.customer).toBe(null);
   });
 });
