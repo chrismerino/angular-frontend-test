@@ -1,0 +1,9 @@
+@for (customer of registeredCustomers; track $index) {
+<app-registered-customer-card
+  [customer]="customer"
+></app-registered-customer-card>
+} @if (registeredCustomers.length === 0) {
+<div class="w-full text-center">
+  <h3>Todavía no hay registros. Intenta guardar el perfil de un cliente.</h3>
+</div>
+}

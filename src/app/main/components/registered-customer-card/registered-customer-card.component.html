@@ -1,0 +1,23 @@
+<mat-card class="mb-4">
+  <mat-card-header>
+    <mat-card-title
+      >{{ customer?.firstName | titlecase }}
+      {{ customer?.lastName | titlecase }}</mat-card-title
+    >
+    <mat-card-subtitle>{{ customer?.profession }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-actions class="justify-end">
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="onShouldOpenViewEditDialog()"
+      class="mr-5"
+    >
+      VER / EDITAR
+    </button>
+    <button mat-button color="warn" (click)="onShouldAskBeforeDeletion()">
+      BORRAR
+    </button>
+  </mat-card-actions>
+</mat-card>
