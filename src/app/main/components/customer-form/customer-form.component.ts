@@ -113,6 +113,12 @@ export class CustomerFormComponent implements OnInit {
         this.newCustomerForm.reset();
         this.newCustomerForm.markAsPristine();
         this.newCustomerForm.markAsUntouched();
+
+        this._snackBar.open(
+          'El Cliente ha sido registrado exitosamente',
+          undefined,
+          { duration: 2000 }
+        );
       }
     }
   }
