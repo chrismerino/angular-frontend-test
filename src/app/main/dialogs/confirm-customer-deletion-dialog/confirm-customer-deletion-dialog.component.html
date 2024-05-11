@@ -1,0 +1,12 @@
+<h3 mat-dialog-title>Borrar Cliente?</h3>
+<mat-dialog-content
+  >Ésta acción borrará el cliente del registro, una vez borrado, no se puede
+  revertir.</mat-dialog-content
+>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button mat-button color="warn" [mat-dialog-close]="'borrar'">
+    Borrar Cliente
+  </button>
+</mat-dialog-actions>
