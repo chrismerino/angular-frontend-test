@@ -1,21 +1,42 @@
-# Angular Frontend Test
+# Angular Front End Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+This an Angular test. The project is based on Angular 17 :) and needs Node 18.18.2 to run.
 
-NODE VERSION: 18.18.2
+## Installation
 
-## Development server
+`git clone https://github.com/chrismerino/angular-frontend-test.git`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Then install the dependencies:
+`npm install`
 
-## Build
+## Run from Docker Image
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+First, make sure Docker is installed in your machine.
 
-## Running unit tests
+Then run:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`docker pull chrismerino/angular-frontend-test`
 
-## Running end-to-end tests
+Verify the image has been pulled from DockerHub by running the command:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+`docker images`
+
+The image `chrismerino/angular-frontend-test` should be there.\
+Now, run the project with the command:
+
+`docker run -p 8080:80 chrismerino/angular-frontend-test`
+
+Open your Web Browser and go to: `http://localhost:8080/`.
+
+## Run the Project from Local Repository
+
+To run the project from local repository:
+`npm run start`
+
+Then, open your Web Browser and go to: `http://localhost:4200/`
+
+## Testing
+
+The project has a few unit tests. You can start the testing suite by typing the command:
+
+`npm run test`
